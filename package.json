@@ -1,0 +1,19 @@
+{
+  "name": "@elemento43/smiler-scripts",
+  "description": "A node CLI for create smiler assets",
+  "preferGlobal": true,
+  "version": "0.1.0",
+  "main": "./index.js",
+  "license": "MIT",
+  "bin": "./bin/cli.js",
+  "dependencies": {
+    "date-fns": "^2.22.1",
+    "node-exiftool": "^2.3.0",
+    "sharp": "^0.28.3",
+    "yargs": "^17.0.1"
+  },
+  "scripts": {
+    "calibrate": "node ./bin/cli.js calibrate",
+    "match": "node ./bin/cli.js match"
+  }
+}
