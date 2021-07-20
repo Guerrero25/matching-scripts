@@ -4,13 +4,13 @@ const path = require("path");
 
 const format = require("date-fns/format");
 
-const imageDirection = "./images/base/calibration_image_base.jpg";
-const outputFile = "./images/build/calibration.jpg";
+const imageDirection = "images/base/calibration_image_base.jpg";
+const outputFile = "images/build/calibration.jpg";
 
 module.exports = () => {
   console.log("Creating calibration picture...");
 
-  readFile(path.join("", imageDirection))
+  readFile(path.join(process.cwd(), imageDirection))
     .then((file) =>
       sharp(file)
         .withMetadata({
@@ -20,7 +20,7 @@ module.exports = () => {
             },
           },
         })
-        .toFile(path.join("", outputFile))
+        .toFile(path.join(process.cwd(), outputFile))
     )
     .then(() => {
       console.log("Completed");
