@@ -11,17 +11,20 @@ module.exports = () => {
   console.log("Creating calibration picture...");
 
   readFile(path.join(process.cwd(), imageDirection))
-    .then((file) =>
-      sharp(file)
+    .then((file) => {
+      const dateNow = format(new Date(), "yyyy:MM:dd HH:mm:ss");
+
+      return sharp(file)
         .withMetadata({
           exif: {
             IFD0: {
-              DateTime: format(new Date(), "yyyy:MM:dd HH:mm:ss"),
+              DateTime: dateNow,
+              DateTimeDigitized: dateNow,
             },
           },
         })
-        .toFile(path.join(process.cwd(), outputFile))
-    )
+        .toFile(path.join(process.cwd(), outputFile));
+    })
     .then(() => {
       console.log("Completed");
     })

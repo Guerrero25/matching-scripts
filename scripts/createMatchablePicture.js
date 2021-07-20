@@ -22,7 +22,9 @@ module.exports = () => {
 
           return readFile(
             path.join(process.cwd(), imageBaseDirection, fileName)
-          ).then((fileBuffer) => getFileWithExifInfo(fileBuffer, photoshoot));
+          )
+            .then((fileBuffer) => getFileWithExifInfo(fileBuffer, photoshoot))
+            .catch(console.error);
         })
       );
     })
