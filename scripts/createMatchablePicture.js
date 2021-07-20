@@ -1,15 +1,15 @@
 const { readdir, readFile } = require("fs/promises");
 const path = require("path");
 
-const photoshoots = require("../models/photoshoots.json");
+const photoshoots = require("./models/photoshoots.json");
 
 const { random } = require("../lib/getRandom");
 const getFileWithExifInfo = require("../lib/getFileWithExifInfo");
 
-const imageBaseDirection = "../images/base/pictures";
+const imageBaseDirection = "./images/base/pictures";
 
 module.exports = () => {
-  readdir(path.join(__dirname, imageBaseDirection))
+  readdir(path.join(".", imageBaseDirection))
     .then((files) => {
       console.log("Creating pictures...");
 
@@ -17,9 +17,9 @@ module.exports = () => {
         files.map((fileName) => {
           const photoshoot = photoshoots[random(0, photoshoots.length)];
 
-          return readFile(
-            path.join(__dirname, imageBaseDirection, fileName)
-          ).then((fileBuffer) => getFileWithExifInfo(fileBuffer, photoshoot));
+          return readFile(path.join(".", imageBaseDirection, fileName)).then(
+            (fileBuffer) => getFileWithExifInfo(fileBuffer, photoshoot)
+          );
         })
       );
     })
