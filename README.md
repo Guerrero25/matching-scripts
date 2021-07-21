@@ -34,7 +34,7 @@ smiler-scrips requires a specific folders to work.
 
 **images/base**: Contains all the images that will be used for generating the pictures
 
-**images/base/calibration.jpg**: Is the picture that will be used for generating the calibration picture
+**images/base/calibration_image_base.jpg**: Is the picture that will be used for generating the calibration picture
 
 **images/base/pictures**: Must contain all the pictures that can be used to generate new matched ones.
 
