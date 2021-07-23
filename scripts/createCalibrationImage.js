@@ -7,7 +7,8 @@ const format = require("date-fns/format");
 const imageDirection = "images/base/calibration_image_base.jpg";
 const outputFile = "images/build/calibration.jpg";
 
-module.exports = () => {
+exports.imageDirection = imageDirection;
+exports.createCalibrationImage = () => {
   console.log("Creating calibration picture...");
 
   readFile(path.join(process.cwd(), imageDirection))

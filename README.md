@@ -8,11 +8,11 @@ An Node CLI for the creation of necessary assets on the Smiler testing process.
 
 Install with Yarn
 
-`$ yarn global add @elemento43/smiler-scripts`
+`$ yarn global add @guerrero7/matching-scripts`
 
 Install with npm
 
-`$ npm i -g @elemento43/smiler-scripts`
+`$ npm i -g @guerrero7/matching-scripts`
 
 ## Folder structure
 
@@ -20,15 +20,15 @@ smiler-scrips requires a specific folders to work.
 
 > images/
 >
-> > base/
+> base/
+>
+> > calibration.jpg
 > >
-> > > calibration.jpg
-> > >
-> > > pictures/
-> >
-> > models/
-> >
-> > > photoshoots.json
+> > pictures/
+>
+> models/
+>
+> > photoshoots.json
 
 **images**: Contains all the pictures related assets. The generated photos will be placed here inside a `build` folder.
 
@@ -44,11 +44,17 @@ smiler-scrips requires a specific folders to work.
 
 ## Commands
 
+### init
+
+Generate the necessary folder structure to use the CLI.
+
+**Use**: `matching-scripts init`
+
 ### calibrate
 
 Generate a calibration image with the current date-time. The result will be placed on `/pictures/build/calibration.jpg`
 
-**Use**: `smiler-scripts calibrate`
+**Use**: `matching-scripts calibrate`
 
 ### match
 
@@ -56,7 +62,7 @@ Generate new pictures which match with random photoshoots. The results will be p
 
 The name of the generated images will be a combination of the photoshoot id and a 6-length random characters.
 
-**Use**: `smiler-scripts match`
+**Use**: `matching-scripts match`
 
 ## Contributing
 

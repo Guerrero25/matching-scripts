@@ -1,6 +1,6 @@
 {
-  "name": "@elemento43/smiler-scripts",
-  "description": "A node CLI for create smiler assets",
+  "name": "@guerrero7/matching-scripts",
+  "description": "A node CLI for create assets with exif information",
   "preferGlobal": true,
   "version": "0.1.4",
   "main": "./index.js",
@@ -8,7 +8,6 @@
   "bin": "./bin/cli.js",
   "dependencies": {
     "date-fns": "^2.22.1",
-    "node-exiftool": "^2.3.0",
     "sharp": "^0.28.3",
     "yargs": "^17.0.1"
   },
