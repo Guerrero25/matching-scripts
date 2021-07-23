@@ -26,7 +26,7 @@ exports.createMatchablePicture = ({
 
       return Promise.all(
         files.map((fileName) => {
-          const photoshoot = photoshoots[random(0, photoshoots.length)];
+          const photoshoot = photoshoots[random(0, photoshoots.length - 1)];
 
           return readFile(
             path.join(process.cwd(), imageBaseDirection, fileName)
