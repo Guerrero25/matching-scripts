@@ -6,13 +6,21 @@ const getFileWithExifInfo = require("../lib/getFileWithExifInfo");
 
 const imageBaseDirection = "images/base/pictures";
 
-exports.createMatchablePicture = () => {
+exports.createMatchablePicture = ({
+  photoshoots: wantedPhotoshoots = "",
+} = {}) => {
   readdir(path.join(process.cwd(), imageBaseDirection))
     .then((files) => {
+      const wantedPhotoshootsList =
+        wantedPhotoshoots === "all" ? [] : wantedPhotoshoots.split(",");
       const photoshoots = require(path.join(
         process.cwd(),
         "models/photoshoots.json"
-      ));
+      )).filter(
+        (photoshoot) =>
+          wantedPhotoshootsList.length === 0 ||
+          wantedPhotoshootsList.includes(photoshoot.id)
+      );
 
       console.log("Creating pictures...");
 

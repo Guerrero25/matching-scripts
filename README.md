@@ -62,6 +62,8 @@ Generate new pictures which match with random photoshoots. The results will be p
 
 The name of the generated images will be a combination of the photoshoot id and a 6-length random characters.
 
+**Option**: `--photoshoots, -p` The list of photoshoot IDs for matching with the pictures.
+
 **Use**: `matching-scripts match`
 
 ## Contributing
