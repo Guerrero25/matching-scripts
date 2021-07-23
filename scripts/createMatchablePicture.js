@@ -6,7 +6,7 @@ const getFileWithExifInfo = require("../lib/getFileWithExifInfo");
 
 const imageBaseDirection = "images/base/pictures";
 
-module.exports = () => {
+exports.createMatchablePicture = () => {
   readdir(path.join(process.cwd(), imageBaseDirection))
     .then((files) => {
       const photoshoots = require(path.join(
