@@ -2,7 +2,7 @@
   "name": "@guerrero7/matching-scripts",
   "description": "A node CLI for create assets with exif information",
   "preferGlobal": true,
-  "version": "0.2.1",
+  "version": "0.2.2",
   "main": "./index.js",
   "license": "MIT",
   "bin": "./bin/cli.js",
@@ -13,6 +13,7 @@
   },
   "scripts": {
     "calibrate": "node ./bin/cli.js calibrate",
-    "match": "node ./bin/cli.js match"
+    "match": "node ./bin/cli.js match",
+    "deploy": "yarn publish --access=public & git push origin master"
   }
 }
