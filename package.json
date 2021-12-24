@@ -1,6 +1,7 @@
 {
   "name": "@guerrero7/matching-scripts",
   "description": "A node CLI for create assets with exif information",
+  "keywords": [ "cli", "exif", "calibration", "generator" ]
   "preferGlobal": true,
   "version": "0.4.1",
   "main": "./index.js",
